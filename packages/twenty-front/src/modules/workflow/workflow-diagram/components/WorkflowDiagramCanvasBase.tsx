@@ -594,7 +594,7 @@ export const WorkflowDiagramCanvasBase = ({
   };
 
   return (
-    <StyledResetReactflowStyles ref={containerRef}>
+    <StyledResetReactflowStyles ref={containerRef} dir="ltr">
       <WorkflowDiagramCustomMarkers />
 
       <ReactFlow
