@@ -196,8 +196,45 @@ When running in CI, the dev environment is **not** pre-configured. Dependencies 
 - **Skip the setup script** for tasks that only read code — architecture questions, code review, documentation, etc.
 - The script is idempotent and safe to run multiple times.
 
+## Legal Compliance (AGPL-3.0 Fork)
+
+This repository is a fork of Twenty CRM, licensed under **AGPL-3.0**. All contributors and AI code agents MUST follow the legal compliance rules documented in [`voicenter-docs/LEGAL-COMPLIANCE-TWENTY-FORK.md`](voicenter-docs/LEGAL-COMPLIANCE-TWENTY-FORK.md). The full document is binding — read it before making significant changes.
+
+### Critical Rules for AI Code Agents
+
+1. **Enterprise license check FIRST**: Before modifying any file, check for `/* @license Enterprise */` at the top. If present, **STOP** — do not modify, copy, or reference that file's contents.
+2. **Modification notices**: Every modified file must include a comment block at the top:
+   ```
+   // Modified by Voicenter — YYYY-MM-DD
+   // Description: Brief description of what was changed and why
+   ```
+3. **Branding**: Never use "Twenty" as the product name in UI, docs, or user-facing content. Use our product branding. Preserve "Twenty" only in license files, copyright notices, and upstream attribution.
+4. **Copyright preservation**: Never remove original `Copyright (c) Twenty.com PBC` notices. Add our notice alongside, not replacing.
+5. **New files in the fork**: Add an AGPL-3.0 license header and our copyright notice.
+6. **No upstream contributions**: Do not submit PRs to `twentyhq/twenty`. Our changes stay in our fork only.
+7. **Source availability**: The public repo must always reflect what runs in production.
+
+### Integration Boundary (echoCenter)
+
+- echoCenter (proprietary) communicates with this fork **only via network APIs** (GraphQL, REST, webhooks).
+- **Never** import, require, bundle, or link any module from this fork into echoCenter's proprietary codebase.
+- **Never** embed the CRM UI in iframes or inject echoCenter components into the fork's frontend. Use standard links only.
+- If echoCenter needs a utility that exists in the fork, rewrite it independently — do not copy.
+- API response schemas can be typed independently in echoCenter without copying AGPL code.
+
+### Auth Restrictions
+
+- Twenty's SAML/OIDC SSO is enterprise-licensed — do NOT use it.
+- Use reverse proxy auth, a standalone IdP (Keycloak, Authentik), or token-based session bridging instead.
+- Never reference enterprise-licensed auth code, even as "inspiration."
+
+### Deployment Checklist
+
+Before any production deployment, verify all items in Section 8 of the legal compliance document, including: public repo is up to date, LICENSE file is present, modification notices are in place, no enterprise-licensed files are included, and a user-facing source code link is visible in the application.
+
 ## Important Files
 - `nx.json` - Nx workspace configuration with task definitions
 - `tsconfig.base.json` - Base TypeScript configuration
 - `package.json` - Root package with workspace definitions
 - `.cursor/rules/` - Detailed development guidelines and best practices
+- `voicenter-docs/LEGAL-COMPLIANCE-TWENTY-FORK.md` - Full legal compliance rules for this AGPL-3.0 fork
