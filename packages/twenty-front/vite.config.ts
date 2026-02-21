@@ -272,7 +272,26 @@ export default defineConfig(({ command, mode }) => {
     },
     css: {
       postcss: {
-        plugins: [postcssRtlcss()],
+        plugins: [
+          {
+            postcssPlugin: 'postcss-rtlcss-filtered',
+            prepare(result: { opts: { from?: string } }) {
+              const from = result.opts.from || '';
+              const isThirdParty =
+                from.includes('node_modules') ||
+                from.includes('.vite');
+              if (isThirdParty) {
+                return {};
+              }
+              const inner = postcssRtlcss();
+              if (inner.prepare) {
+                return inner.prepare(result);
+              }
+              const { postcssPlugin: _name, ...visitors } = inner;
+              return visitors;
+            },
+          },
+        ],
       },
       modules: {
         localsConvention: 'camelCaseOnly',
