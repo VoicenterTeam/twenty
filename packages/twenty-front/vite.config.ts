@@ -1,3 +1,5 @@
+// Modified by Voicenter — 2026-02-20
+// Description: Added postcss-rtlcss for Linaria RTL support and keepComments for wyw plugin
 /* eslint-disable no-console */
 import { lingui } from '@lingui/vite-plugin';
 import { isNonEmptyString } from '@sniptt/guards';
@@ -5,6 +7,7 @@ import react from '@vitejs/plugin-react-swc';
 import wyw from '@wyw-in-js/vite';
 import fs from 'fs';
 import path from 'path';
+import postcssRtlcss from 'postcss-rtlcss';
 import { visualizer } from 'rollup-plugin-visualizer';
 import {
   defineConfig,
@@ -268,6 +271,9 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     css: {
+      postcss: {
+        plugins: [postcssRtlcss()],
+      },
       modules: {
         localsConvention: 'camelCaseOnly',
       },
