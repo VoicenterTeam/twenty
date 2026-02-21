@@ -11,6 +11,10 @@ const isExternal = (id: string): boolean => {
     return false;
   }
 
+  if (path.isAbsolute(id)) {
+    return false;
+  }
+
   return true;
 };
 

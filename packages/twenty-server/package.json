@@ -219,6 +219,7 @@
     "@types/react": "^18.2.39",
     "@types/unzipper": "^0",
     "@yarnpkg/types": "^4.0.0",
+    "cross-env": "^10.1.0",
     "rimraf": "^5.0.5",
     "twenty-emails": "workspace:*",
     "twenty-shared": "workspace:*"
