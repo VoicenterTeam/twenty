@@ -149,6 +149,7 @@ export const MultiItemBaseInput = forwardRef<
             })
           ) : (
             <StyledInput
+              dir="ltr"
               hasError={hasError}
               autoFocus={autoFocus}
               value={value}

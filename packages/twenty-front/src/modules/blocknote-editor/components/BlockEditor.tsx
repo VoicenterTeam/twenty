@@ -1,3 +1,5 @@
+// Modified by Voicenter — 2026-02-20
+// Description: Added RTL direction support for BlockNote editor container
 import { filterSuggestionItems } from '@blocknote/core';
 import { BlockNoteView } from '@blocknote/mantine';
 import { SuggestionMenuController } from '@blocknote/react';
@@ -14,6 +16,7 @@ import {
   type SuggestionItem,
 } from '@/blocknote-editor/components/CustomSlashMenu';
 import { useMentionMenu } from '@/mention/hooks/useMentionMenu';
+import { useDirection } from '~/utils/rtl/useDirection';
 
 interface BlockEditorProps {
   editor: typeof BLOCK_SCHEMA.BlockNoteEditor;
@@ -161,8 +164,10 @@ export const BlockEditor = ({
     onPaste?.(event);
   };
 
+  const direction = useDirection();
+
   return (
-    <StyledEditor>
+    <StyledEditor dir={direction}>
       <BlockNoteView
         onFocus={handleFocus}
         onBlur={handleBlur}

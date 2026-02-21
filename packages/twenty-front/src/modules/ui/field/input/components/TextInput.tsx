@@ -83,6 +83,7 @@ export const TextInput = ({
     <>
       <StyledTextInput
         id={instanceId}
+        dir="auto"
         autoComplete="off"
         ref={wrapperRef}
         placeholder={placeholder}

@@ -1,3 +1,5 @@
+// Modified by Voicenter — 2026-02-20
+// Description: Added RTL direction support for Dashboard BlockNote editor container
 import { filterSuggestionItems } from '@blocknote/core';
 import { BlockNoteView } from '@blocknote/mantine';
 import { SuggestionMenuController } from '@blocknote/react';
@@ -13,6 +15,7 @@ import { DashboardEditorSideMenu } from '@/page-layout/widgets/standalone-rich-t
 import { DashboardFormattingToolbar } from '@/page-layout/widgets/standalone-rich-text/components/DashboardFormattingToolbar';
 import { type DASHBOARD_BLOCK_SCHEMA } from '@/page-layout/widgets/standalone-rich-text/constants/DashboardBlockSchema';
 import { getDashboardSlashMenu } from '@/page-layout/widgets/standalone-rich-text/utils/getDashboardSlashMenu';
+import { useDirection } from '~/utils/rtl/useDirection';
 
 type DashboardsBlockEditorProps = {
   editor: typeof DASHBOARD_BLOCK_SCHEMA.BlockNoteEditor;
@@ -166,8 +169,10 @@ export const DashboardsBlockEditor = ({
     onPaste?.(event);
   };
 
+  const direction = useDirection();
+
   return (
-    <StyledEditor>
+    <StyledEditor dir={direction}>
       <BlockNoteView
         onFocus={handleFocus}
         onBlur={handleBlur}

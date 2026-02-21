@@ -1,9 +1,12 @@
+// Modified by Voicenter — 2026-02-20
+// Description: Added RTL direction support for TipTap editor container
 import { ImageBubbleMenu } from '@/advanced-text-editor/components/ImageBubbleMenu';
 import { LinkBubbleMenu } from '@/advanced-text-editor/components/LinkBubbleMenu';
 import { TextBubbleMenu } from '@/advanced-text-editor/components/TextBubbleMenu';
 import { FORM_FIELD_PLACEHOLDER_STYLES } from '@/object-record/record-field/ui/form-types/constants/FormFieldPlaceholderStyles';
 import styled from '@emotion/styled';
 import { EditorContent, type Editor } from '@tiptap/react';
+import { useDirection } from '~/utils/rtl/useDirection';
 
 const StyledEditorContainer = styled.div<{
   readonly?: boolean;
@@ -94,11 +97,14 @@ export const AdvancedTextEditor = ({
   minHeight,
   maxWidth,
 }: AdvancedTextEditorProps) => {
+  const direction = useDirection();
+
   return (
     <StyledEditorContainer
       readonly={readonly}
       minHeight={minHeight}
       maxWidth={maxWidth}
+      dir={direction}
     >
       <EditorContent className="editor-content" editor={editor} />
       <ImageBubbleMenu editor={editor} />

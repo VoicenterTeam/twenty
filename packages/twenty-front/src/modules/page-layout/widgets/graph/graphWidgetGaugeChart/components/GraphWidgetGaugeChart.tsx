@@ -117,7 +117,7 @@ export const GraphWidgetGaugeChart = ({
 
   return (
     <StyledContainer>
-      <StyledChartContainer $isClickable={hasClickableItems}>
+      <StyledChartContainer $isClickable={hasClickableItems} dir="ltr">
         <ResponsiveRadialBar
           data={chartData}
           startAngle={-90}

@@ -104,7 +104,7 @@ export const SettingsAdminWorkerMetricsGraph = ({
 
   return (
     <>
-      <StyledGraphContainer>
+      <StyledGraphContainer dir="ltr">
         {loading ? (
           <StyledNoDataMessage>{t`Loading metrics data...`}</StyledNoDataMessage>
         ) : hasData ? (

@@ -1,3 +1,5 @@
+// Modified by Voicenter — 2026-02-20
+// Description: Made resize edge direction-aware for RTL layout support
 import styled from '@emotion/styled';
 import { type ReactNode, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
@@ -16,6 +18,7 @@ import {
   navigationDrawerWidthState,
 } from '@/ui/navigation/states/navigationDrawerWidthState';
 import { NavigationDrawerWidthEffect } from '@/ui/navigation/components/NavigationDrawerWidthEffect';
+import { useDirection } from '~/utils/rtl/useDirection';
 import { NavigationDrawerBackButton } from './NavigationDrawerBackButton';
 import { NavigationDrawerHeader } from './NavigationDrawerHeader';
 
@@ -76,6 +79,8 @@ export const NavigationDrawer = ({
   const [isResizing, setIsResizing] = useState(false);
   const isMobile = useIsMobile();
   const isSettingsDrawer = useIsSettingsDrawer();
+  const direction = useDirection();
+  const resizeEdgeSide = direction === 'rtl' ? 'left' : 'right';
 
   const [isNavigationDrawerExpanded, setIsNavigationDrawerExpanded] =
     useRecoilStateV2(isNavigationDrawerExpandedState);
@@ -136,7 +141,7 @@ export const NavigationDrawer = ({
 
         {isNavigationDrawerExpanded && !isMobile && !isSettingsDrawer && (
           <ResizablePanelEdge
-            side="right"
+            side={resizeEdgeSide}
             constraints={NAVIGATION_DRAWER_CONSTRAINTS}
             currentWidth={navigationDrawerWidth}
             onWidthChange={handleWidthChange}

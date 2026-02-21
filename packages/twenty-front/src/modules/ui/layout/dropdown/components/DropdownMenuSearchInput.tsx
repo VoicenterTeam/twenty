@@ -47,6 +47,7 @@ export const DropdownMenuSearchInput = forwardRef<
   return (
     <StyledDropdownMenuSearchInputContainer>
       <StyledInput
+        dir="auto"
         autoComplete="off"
         {...{ onChange, placeholder: translatedPlaceholder, type, value }}
         ref={ref}

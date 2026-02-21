@@ -327,6 +327,7 @@ const TextInputComponent = forwardRef<
 
           <StyledInput
             id={instanceId}
+            dir="auto"
             width={width}
             data-testid={dataTestId}
             autoComplete={autoComplete || 'off'}
