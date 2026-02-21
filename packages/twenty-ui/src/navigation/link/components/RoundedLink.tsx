@@ -8,6 +8,7 @@ type RoundedLinkProps = {
   label?: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   className?: string;
+  dir?: 'ltr' | 'rtl' | 'auto';
 };
 
 const fontSizeMd = FONT_COMMON.size.md;
@@ -65,6 +66,7 @@ export const RoundedLink = ({
   href,
   onClick,
   className,
+  dir,
 }: RoundedLinkProps) => {
   const { theme } = useContext(ThemeContext);
 
@@ -96,6 +98,7 @@ export const RoundedLink = ({
       backgroundActive={backgroundActive}
       border={border}
       className={className}
+      dir={dir}
     >
       {label}
     </StyledLink>

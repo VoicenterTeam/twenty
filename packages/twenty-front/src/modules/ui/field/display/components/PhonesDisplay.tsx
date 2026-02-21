@@ -89,6 +89,7 @@ export const PhonesDisplay = ({
             label={
               parsedPhone ? parsedPhone.formatInternational() : invalidPhone
             }
+            dir="ltr"
             onClick={(event) =>
               onPhoneNumberClick?.(callingCode + number, event)
             }
@@ -109,6 +110,7 @@ export const PhonesDisplay = ({
             label={
               parsedPhone ? parsedPhone.formatInternational() : invalidPhone
             }
+            dir="ltr"
             onClick={(event) =>
               onPhoneNumberClick?.(callingCode + number, event)
             }

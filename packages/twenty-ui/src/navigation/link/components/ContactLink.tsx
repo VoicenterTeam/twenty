@@ -28,6 +28,7 @@ type ContactLinkProps = {
   children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   maxWidth?: number;
+  dir?: 'ltr' | 'rtl' | 'auto';
 };
 
 export const ContactLink = ({
@@ -35,12 +36,14 @@ export const ContactLink = ({
   children,
   onClick,
   maxWidth,
+  dir,
 }: ContactLinkProps) => (
   <StyledClickableLink
     maxWidth={maxWidth}
     target="_blank"
     onClick={onClick}
     href={href}
+    dir={dir}
   >
     {children}
   </StyledClickableLink>
