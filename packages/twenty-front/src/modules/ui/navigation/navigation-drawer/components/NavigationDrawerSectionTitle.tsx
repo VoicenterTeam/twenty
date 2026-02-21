@@ -16,10 +16,9 @@ const StyledTitle = styled.div`
   border-radius: ${({ theme }) => theme.border.radius.sm};
   display: flex;
   height: ${({ theme }) => theme.spacing(5)};
-  padding-left: ${({ theme }) => theme.spacing(1)};
-  padding-right: ${({ theme }) => theme.spacing(0.5)};
-  padding-top: ${({ theme }) => theme.spacing(1)};
-  padding-bottom: ${({ theme }) => theme.spacing(1)};
+  padding-inline-start: ${({ theme }) => theme.spacing(1)};
+  padding-inline-end: ${({ theme }) => theme.spacing(0.5)};
+  padding-block: ${({ theme }) => theme.spacing(1)};
   justify-content: space-between;
 
   &:hover {

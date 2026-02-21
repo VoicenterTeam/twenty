@@ -9,7 +9,7 @@ const StyledDropdownMenuSectionLabel = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: ${({ theme }) => theme.spacing(1)};
+  padding-inline-start: ${({ theme }) => theme.spacing(1)};
   user-select: none;
 `;
 

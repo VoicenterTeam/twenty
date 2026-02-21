@@ -114,11 +114,10 @@ const StyledItem = styled('button', {
   font-family: ${({ theme }) => theme.font.family};
   font-size: ${({ theme }) => theme.font.size.md};
 
-  padding-bottom: ${({ theme }) => theme.spacing(1)};
-  padding-left: ${({ theme }) => theme.spacing(1)};
-  padding-right: ${({ theme, hasRightOptions }) =>
+  padding-block: ${({ theme }) => theme.spacing(1)};
+  padding-inline-start: ${({ theme }) => theme.spacing(1)};
+  padding-inline-end: ${({ theme, hasRightOptions }) =>
     hasRightOptions ? theme.spacing(0.5) : theme.spacing(1)};
-  padding-top: ${({ theme }) => theme.spacing(1)};
 
   margin-top: ${({ indentationLevel }) =>
     indentationLevel === 2 ? '2px' : '0'};
@@ -188,7 +187,7 @@ const StyledItemCount = styled.span`
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   height: 16px;
   justify-content: center;
-  margin-left: auto;
+  margin-inline-start: auto;
   width: 16px;
 `;
 
@@ -222,7 +221,7 @@ const StyledIcon = styled.div<{ $backgroundColor?: string }>`
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center;
-  margin-right: ${({ theme }) => theme.spacing(2)};
+  margin-inline-end: ${({ theme }) => theme.spacing(2)};
 
   ${({ theme, $backgroundColor }) =>
     $backgroundColor &&
@@ -262,7 +261,7 @@ const StyledRightOptionsVisbility = styled.div<{
   opacity: 0;
   transition: opacity 150ms;
   position: absolute;
-  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-inline-start: ${({ theme }) => theme.spacing(2)};
   overflow: hidden;
   clip-path: inset(1px);
   white-space: nowrap;

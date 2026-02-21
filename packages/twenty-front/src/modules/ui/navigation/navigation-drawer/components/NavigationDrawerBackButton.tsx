@@ -40,7 +40,7 @@ const StyledContainer = styled.div`
   flex-direction: row;
   height: ${({ theme }) => theme.spacing(8)};
   justify-content: space-between;
-  padding-left: ${({ theme }) => theme.spacing(5)};
+  padding-inline-start: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const NavigationDrawerBackButton = ({

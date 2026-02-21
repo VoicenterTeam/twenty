@@ -57,16 +57,16 @@ const StyledContainer = styled.div<{
   width: var(${NAVIGATION_DRAWER_WIDTH_VAR});
   gap: ${({ theme }) => theme.spacing(3)};
   height: 100%;
-  padding: ${({ theme, isSettings, isMobile }) =>
-    isSettings
-      ? isMobile
-        ? theme.spacing(3, 0, 0, 8)
-        : theme.spacing(3, 0, 4, 0)
-      : theme.spacing(3, 0, 4, 2)};
+  padding-block-start: ${({ theme }) => theme.spacing(3)};
+  padding-block-end: ${({ theme, isSettings, isMobile }) =>
+    isSettings ? (isMobile ? '0' : theme.spacing(4)) : theme.spacing(4)};
+  padding-inline-start: ${({ theme, isSettings, isMobile }) =>
+    isSettings ? (isMobile ? theme.spacing(8) : '0') : theme.spacing(2)};
+  padding-inline-end: 0;
   @media (max-width: ${MOBILE_VIEWPORT}px) {
     width: 100%;
-    padding-left: ${({ theme }) => theme.spacing(5)};
-    padding-right: ${({ theme }) => theme.spacing(5)};
+    padding-inline-start: ${({ theme }) => theme.spacing(5)};
+    padding-inline-end: ${({ theme }) => theme.spacing(5)};
   }
 `;
 

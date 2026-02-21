@@ -72,7 +72,7 @@ const StyledAdornmentContainer = styled.div<StyledAdornmentContainerProps>`
           : '32px'};
 
   ${({ position }) =>
-    position === 'left' ? 'border-right: none;' : 'border-left: none;'}
+    position === 'left' ? 'border-inline-end: none;' : 'border-inline-start: none;'}
 `;
 
 const StyledInput = styled.input<
@@ -125,13 +125,13 @@ const StyledInput = styled.input<
       : sizeVariant === 'xs'
         ? `${theme.spacing(2)} 0`
         : theme.spacing(2)};
-  padding-left: ${({ theme, LeftIcon, autoGrow }) =>
+  padding-inline-start: ${({ theme, LeftIcon, autoGrow }) =>
     autoGrow
       ? theme.spacing(1)
       : LeftIcon
         ? `calc(${theme.spacing(3)} + 16px)`
         : theme.spacing(2)};
-  padding-right: ${({ theme, RightIcon, autoGrow }) =>
+  padding-inline-end: ${({ theme, RightIcon, autoGrow }) =>
     autoGrow
       ? theme.spacing(1)
       : RightIcon
@@ -169,7 +169,7 @@ const StyledLeftIconContainer = styled.div<{ sizeVariant: TextInputSize }>`
   align-items: center;
   display: flex;
   justify-content: center;
-  padding-left: ${({ theme, sizeVariant }) =>
+  padding-inline-start: ${({ theme, sizeVariant }) =>
     sizeVariant === 'xs'
       ? theme.spacing(0.5)
       : sizeVariant === 'md' || sizeVariant === 'sm'
@@ -187,11 +187,11 @@ const StyledTrailingIconContainer = styled.div<
   align-items: center;
   display: flex;
   justify-content: center;
-  padding-right: ${({ theme }) => theme.spacing(2)};
+  padding-inline-end: ${({ theme }) => theme.spacing(2)};
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  inset-inline-end: 0;
   margin: auto 0;
 `;
 

@@ -20,8 +20,8 @@ const StyledDropdownMenuInnerSelectDropdownButton = styled.div`
 
   justify-content: space-between;
 
-  padding-left: ${({ theme }) => theme.spacing(2)};
-  padding-right: ${({ theme }) => theme.spacing(2)};
+  padding-inline-start: ${({ theme }) => theme.spacing(2)};
+  padding-inline-end: ${({ theme }) => theme.spacing(2)};
   width: 100%;
 
   box-sizing: border-box;

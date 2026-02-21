@@ -10,7 +10,7 @@ type SectionProps = {
 };
 
 export enum SectionAlignment {
-  Left = 'left',
+  Left = 'start',
   Center = 'center',
 }
 

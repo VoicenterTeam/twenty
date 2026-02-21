@@ -17,7 +17,7 @@ const StyledRow = styled(CardContent, {
   font-weight: ${({ theme }) => theme.font.weight.medium};
   gap: ${({ theme }) => theme.spacing(2)};
   padding: ${({ theme }) => theme.spacing(2)};
-  padding-left: ${({ theme }) => theme.spacing(3)};
+  padding-inline-start: ${({ theme }) => theme.spacing(3)};
   min-height: ${({ theme }) => theme.spacing(6)};
 
   &:hover {
@@ -49,7 +49,7 @@ const StyledLabel = styled.span`
 const StyledDescription = styled.span`
   color: ${({ theme }) => theme.font.color.light};
   font-weight: ${({ theme }) => theme.font.weight.regular};
-  padding-left: ${({ theme }) => theme.spacing(1)};
+  padding-inline-start: ${({ theme }) => theme.spacing(1)};
 `;
 
 const StyledLink = styled(Link)`

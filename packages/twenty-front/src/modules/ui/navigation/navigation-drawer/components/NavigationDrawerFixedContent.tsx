@@ -12,8 +12,8 @@ const StyledFixedContainer = styled.div<{
   ${({ isSettings, theme, isMobile }) =>
     isSettings
       ? `
-  padding-left: ${theme.spacing(5)};
-  padding-right: ${isMobile ? theme.spacing(5) : theme.spacing(8)};
+  padding-inline-start: ${theme.spacing(5)};
+  padding-inline-end: ${isMobile ? theme.spacing(5) : theme.spacing(8)};
 `
       : ''}
 `;

@@ -28,7 +28,8 @@ const StyledTitle = styled.h3<{ reserveTitleSpace?: boolean }>`
   font-size: ${({ theme }) => theme.font.size.lg};
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   line-height: 1.2;
-  margin: ${({ theme }) => theme.spacing(8, 8, 2)};
+  margin-block: ${({ theme }) => `${theme.spacing(8)} ${theme.spacing(2)}`};
+  margin-inline: ${({ theme }) => theme.spacing(8)};
   min-height: ${({ theme, reserveTitleSpace }) =>
     reserveTitleSpace ? theme.spacing(5) : 'none'};
 `;

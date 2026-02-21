@@ -27,7 +27,7 @@ const StyledInput = styled.input<{
   ${({ withRightComponent }) =>
     withRightComponent &&
     css`
-      padding-right: 32px;
+      padding-inline-end: 32px;
     `}
 `;
 
@@ -44,7 +44,7 @@ const StyledInputContainer = styled.div`
 
 const StyledRightContainer = styled.div`
   position: absolute;
-  right: ${({ theme }) => theme.spacing(2)};
+  inset-inline-end: ${({ theme }) => theme.spacing(2)};
   top: 50%;
   transform: translateY(-50%);
 `;

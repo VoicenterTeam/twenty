@@ -8,8 +8,8 @@ export type NavigationDrawerItemBreadcrumbProps = {
 const StyledNavigationDrawerItemBreadcrumbContainer = styled.div`
   height: 28px;
 
-  margin-left: 7.5px;
-  margin-right: ${({ theme }) => theme.spacing(2)};
+  margin-inline-start: 7.5px;
+  margin-inline-end: ${({ theme }) => theme.spacing(2)};
   width: 9px;
 `;
 
@@ -38,7 +38,7 @@ const StyledRoundedProtrusion = styled.div<{ darker: boolean }>`
   position: relative;
   top: -2px;
 
-  border-bottom-left-radius: 4px;
+  border-end-start-radius: 4px;
 
   border: 1px solid
     ${({ theme, darker }) =>
@@ -46,8 +46,8 @@ const StyledRoundedProtrusion = styled.div<{ darker: boolean }>`
 
   ${({ darker }) => (darker ? 'z-index: 1;' : '')}
 
-  border-top: none;
-  border-right: none;
+  border-block-start: none;
+  border-inline-end: none;
   height: 14px;
   width: 8px;
 `;

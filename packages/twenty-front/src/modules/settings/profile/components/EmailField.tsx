@@ -26,7 +26,7 @@ const StyledActionWrapper = styled.div`
   align-items: stretch;
 
   & > button + button {
-    border-left: none;
+    border-inline-start: none;
   }
 `;
 

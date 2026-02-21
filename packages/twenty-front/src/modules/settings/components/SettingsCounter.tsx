@@ -17,7 +17,7 @@ const StyledCounterContainer = styled.div<{ showButtons: boolean }>`
   align-items: center;
   display: flex;
   gap: ${({ theme }) => theme.spacing(1)};
-  margin-left: auto;
+  margin-inline-start: auto;
   width: ${({ theme, showButtons }) =>
     showButtons ? theme.spacing(30) : theme.spacing(16)};
 `;

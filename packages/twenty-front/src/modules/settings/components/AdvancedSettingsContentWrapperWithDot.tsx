@@ -33,7 +33,7 @@ const StyledDotContainer = styled.div<{ dotPosition: DotPosition }>`
 `;
 
 const StyledIconPoint = styled(IconPoint)`
-  margin-right: 0;
+  margin-inline-end: 0;
 `;
 
 export const AdvancedSettingsContentWrapperWithDot = ({

@@ -14,8 +14,8 @@ const StyledItemsContainer = styled.div`
 
 const StyledScrollableInnerContainer = styled.div<{ isMobile?: boolean }>`
   height: 100%;
-  padding-left: ${({ theme }) => theme.spacing(5)};
-  padding-right: ${({ theme, isMobile }) =>
+  padding-inline-start: ${({ theme }) => theme.spacing(5)};
+  padding-inline-end: ${({ theme, isMobile }) =>
     isMobile ? theme.spacing(5) : theme.spacing(8)};
 `;
 

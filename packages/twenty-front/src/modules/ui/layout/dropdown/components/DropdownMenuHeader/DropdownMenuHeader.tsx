@@ -36,8 +36,8 @@ const StyledChildrenWrapper = styled.span`
 const StyledEndComponent = styled.div`
   display: inline-flex;
   color: ${({ theme }) => theme.font.color.tertiary};
-  margin-left: auto;
-  margin-right: 0;
+  margin-inline-start: auto;
+  margin-inline-end: 0;
 
   & > svg {
     height: ${({ theme }) => theme.icon.size.md}px;

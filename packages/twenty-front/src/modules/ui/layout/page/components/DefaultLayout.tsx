@@ -22,6 +22,7 @@ import styled from '@emotion/styled';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { Outlet } from 'react-router-dom';
 import { useScreenSize } from 'twenty-ui/utilities';
+import { useDirection } from '~/utils/rtl/useDirection';
 
 const StyledLayout = styled.div`
   background: ${({ theme }) => theme.background.noisy};
@@ -66,6 +67,7 @@ export const DefaultLayout = () => {
   const windowsWidth = useScreenSize().width;
   const showAuthModal = useShowAuthModal();
   const useShowFullScreen = useShowFullscreen();
+  const direction = useDirection();
 
   return (
     <>
@@ -83,7 +85,7 @@ export const DefaultLayout = () => {
             <NavigationMenuEditModeBar />
             <StyledPageContainer
               animate={{
-                marginLeft:
+                [direction === 'rtl' ? 'marginRight' : 'marginLeft']:
                   isSettingsPage && !isMobile && !useShowFullScreen
                     ? (windowsWidth -
                         (OBJECT_SETTINGS_WIDTH +

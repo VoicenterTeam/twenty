@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   align-items: center;
   display: flex;
   user-select: none;
-  padding-right: ${({ theme }) => theme.spacing(2)};
+  padding-inline-end: ${({ theme }) => theme.spacing(2)};
   min-height: ${PAGE_BAR_MIN_HEIGHT}px;
 `;
 
@@ -20,9 +20,9 @@ const StyledNavigationDrawerCollapseButton = styled(
   NavigationDrawerCollapseButton,
 )<{ show?: boolean }>`
   height: ${({ theme }) => theme.spacing(4)};
-  margin-left: auto;
+  margin-inline-start: auto;
   opacity: ${({ show }) => (show ? 1 : 0)};
-  padding-right: ${({ theme }) => theme.spacing(1)};
+  padding-inline-end: ${({ theme }) => theme.spacing(1)};
   transition: opacity ${({ theme }) => theme.animation.duration.normal}s;
   width: ${({ theme }) => theme.spacing(4)};
 `;
