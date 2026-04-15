@@ -58,7 +58,7 @@ __metadata:
     "@types/node": "npm:^24.7.2"
     axios: "npm:^1.12.2"
     openai: "npm:^4.28.0"
-    twenty-sdk: "npm:^0.0.2"
+    twenty-sdk: "npm:0.0.3"
   languageName: unknown
   linkType: soft
 
@@ -174,12 +174,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.15.6":
-  version: 1.15.11
-  resolution: "follow-redirects@npm:1.15.11"
+  version: 1.16.0
+  resolution: "follow-redirects@npm:1.16.0"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 10c0/d301f430542520a54058d4aeeb453233c564aaccac835d29d15e050beb33f339ad67d9bddbce01739c5dc46a6716dbe3d9d0d5134b1ca203effa11a7ef092343
+  checksum: 10c0/a1e2900163e6f1b4d1ed5c221b607f41decbab65534c63fe7e287e40a5d552a6496e7d9d7d976fa4ba77b4c51c11e5e9f683f10b43011ea11e442ff128d0e181
   languageName: node
   linkType: hard
 
@@ -389,10 +389,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"twenty-sdk@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "twenty-sdk@npm:0.0.2"
-  checksum: 10c0/99e6fe86059d847b548c1f03e0f0c59a4d540caf1d28dd4500f1f5f0094196985ded955801274de9e72ff03e3d1f41e9a509b4c2c5a02ffc8a027277b1e35d8e
+"twenty-sdk@npm:0.0.3":
+  version: 0.0.3
+  resolution: "twenty-sdk@npm:0.0.3"
+  checksum: 10c0/0a3c85c27edb22fb50f7eb0da4f9770e85729fce05e9e0118ad0cdfc36e42425c93340a6cd1c276daf30aeeaa612db0cd905831c0a8287a31bff3da5be9b0562
   languageName: node
   linkType: hard
 
